@@ -1,0 +1,17 @@
+﻿<!--x:Class="" Links the XAML to the partial class in the code-behind file, where behaviour is defined-->
+<!--xmlns=""   Maps the default XAML namespace for WPF client/framework-->    
+<!--xmlns:x="" XAML namespace for XAML language which map it to x:prefix-->
+<!-- so basically you also could add other framework for example: DevExpressWPF just give him own prefix and you're ready to go-->
+<Window x:Class="FirstSteps.Wpf.MainWindow" 
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FirstSteps.Wpf"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="604">
+    <Grid>
+        <Button x:Name="btnFirstButton" Content="First Button" Width="80" Height="30"  />
+        <TextBlock x:Name="tBlockNotification" Text="Congratulations you have successfully build your first app." Height="30" Margin="162,180,122,109" />
+    </Grid>
+</Window>
