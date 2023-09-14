@@ -30,16 +30,19 @@
             So, the above XAML code not only creates a TextBlock control, but also instantiates a Clock object.
             Further, the code binds the Text property of the TextBlock to the CurrentTime
             property of the Clock object it created. The CurrentTime property is called
-            the binding's source, while the Text property is called the binding's destination.
+            the binding's "source", while the Text property is called the binding's "target".
             -->
         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Horizontal" 
                     Visibility="{Binding IsNameNeeded, Converter={StaticResource BooleanToVisibilityConverter}}">
             <!--Setting the Visibility of the form through BooleanToVisibilityConverter and Binding to the IsNameNeeded property
                 of the MainWindowDataContext class-->
             <TextBlock Margin="10" VerticalAlignment="Center" Text="Enter your name:"/>
-            <TextBox Name="tbUserName" Margin="10" Width="150" VerticalAlignment="Center" Text="{Binding UserName, Mode=TwoWay}"/>
-            <!--two-way binding between the TextBox.Text property and the UserName property -->
-            <Button Margin="10" VerticalAlignment="Center" Content="Submit" Click="OnSubmit_Click"/>
+            <TextBox Name="tbUserName" Margin="10" Width="150" VerticalAlignment="Center" Text="{Binding UserName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+            <!--By setting the UpdateSourceTrigger on PropertChanged we achieve that the binding updates on every keystroke, 
+                default setting is on LostFocus, which will update as soon as we click anywhere else, 
+                this subtle change won't represent in the UI tho since only the bound property itself gets updated.-->
+            <Button Margin="10" VerticalAlignment="Center" Content="Submit" Click="OnSubmit_Click" IsEnabled="{Binding IsSubmitAllowed}"/>
+            <!--With binding IsSubmitAllowed to the IsEnabled property, the Button stays disabled until our input is validated by the  bound property (which in this case should return boolean values, cuz logic)-->
         </StackPanel>
     </Grid>
 </Window>

@@ -14,10 +14,24 @@ namespace Microsoft.DataBindingSampleWpf.Resources
     /// </summary>
     public class MainWindowDataContext : ObservableObject/*INotifyPropertyChanged*/
     {
-        public string? UserName { get; set; }
+        string? _userName;
 
         /// <summary>
-        /// Setting the visibility in code
+        /// Re-evaluation by IsSubmitAllowed on every change to UserName
+        /// </summary>
+        public string? UserName
+        {
+            get { return _userName; }
+            set 
+            {
+                _userName = value;
+                RaisePropertyChanged(nameof(IsSubmitAllowed));
+            }
+        }
+
+
+        /// <summary>
+        /// Setting the visibility in code, dependent on the return value of IsNameNeeded.
         /// </summary>
         public Visibility GreetingVisibility => IsNameNeeded ? Visibility.Collapsed : Visibility.Visible;
 
@@ -51,6 +65,11 @@ namespace Microsoft.DataBindingSampleWpf.Resources
                 //}
             }
         }
+
+        /// <summary>
+        /// simple validation of the Text entered in the tbUserName textbox
+        /// </summary>
+        public bool IsSubmitAllowed => !string.IsNullOrWhiteSpace(UserName);
 
         public MainWindowDataContext() { }
 
