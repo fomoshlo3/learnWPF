@@ -1,16 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Microsoft.DataBindingSampleWpf.Resources;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace Microsoft.DataBindingSampleWpf.Views
 {
@@ -19,9 +8,24 @@ namespace Microsoft.DataBindingSampleWpf.Views
     /// </summary>
     public partial class ColorList : Window
     {
+        private ColorListDataContext DC => (ColorListDataContext)DataContext;
+
         public ColorList()
         {
             InitializeComponent();
         }
+
+        private void CmdAddToFavorites_Click(object sender, RoutedEventArgs e)
+        {
+            DC.AddSelectedColorToFavorites();
+        }
+
+        private void CmdRemoveFromFavorites_Click(object sender, RoutedEventArgs e)
+        {
+            DC.RemoveSelectedColorFromFavorites();
+        }
+        //TODO: As an exercise, try hiding the entire Favorite Colors part of the UI when the FavoriteColors collection is empty.
+        //Hint: use a StackPanel to group the affected controls, and bind the StackPanel's Visibility to a property in the ColorListDataContext class.
+        //Whenever a favorite color is added or removed, notify the UI about the changes to this property.
     }
 }
