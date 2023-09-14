@@ -14,6 +14,8 @@
         <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
     </Window.Resources>
     <Grid>
+        <TextBlock Text="{Binding Text, ElementName=tbUserName, StringFormat='Hello {0}!'}" Visibility="{Binding GreetingVisibility}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10"/>
+        <!--UI-to-UI binding: source and target are on the UI -->
         <TextBlock HorizontalAlignment="Right" VerticalAlignment="Top" Margin="10" Text="{Binding CurrentTime}">
             <TextBlock.DataContext>
                 <local:Clock/>
@@ -32,8 +34,11 @@
             -->
         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Horizontal" 
                     Visibility="{Binding IsNameNeeded, Converter={StaticResource BooleanToVisibilityConverter}}">
+            <!--Setting the Visibility of the form through BooleanToVisibilityConverter and Binding to the IsNameNeeded property
+                of the MainWindowDataContext class-->
             <TextBlock Margin="10" VerticalAlignment="Center" Text="Enter your name:"/>
             <TextBox Name="tbUserName" Margin="10" Width="150" VerticalAlignment="Center" Text="{Binding UserName, Mode=TwoWay}"/>
+            <!--two-way binding between the TextBox.Text property and the UserName property -->
             <Button Margin="10" VerticalAlignment="Center" Content="Submit" Click="OnSubmit_Click"/>
         </StackPanel>
     </Grid>
