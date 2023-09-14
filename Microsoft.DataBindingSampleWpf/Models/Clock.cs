@@ -1,10 +1,11 @@
-﻿using System;
+﻿using Microsoft.DataBindingSampleWpf.Resources;
+using System;
 using System.ComponentModel;
 using System.Windows.Threading;
 
 namespace Microsoft.DataBindingSampleWpf.Models
 {
-    public class Clock : INotifyPropertyChanged
+    public class Clock : ObservableObject /*INotifyPropertyChanged*/
     {
         /// <summary>
         /// Expression-bodied Member
@@ -27,7 +28,7 @@ namespace Microsoft.DataBindingSampleWpf.Models
         /// By inheriting from INotifyPropertyChanged you implement this public event, this
         /// will be used to inform the GUI that the property of its bound DataSource has changed.
         /// </summary>
-        public event PropertyChangedEventHandler? PropertyChanged;
+        //public event PropertyChangedEventHandler? PropertyChanged;
 
         private DispatcherTimer _timer;
 
@@ -41,7 +42,8 @@ namespace Microsoft.DataBindingSampleWpf.Models
             {
                 Interval = TimeSpan.FromSeconds(1)
             };
-            _timer.Tick += (sender, o) => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(CurrentTime)));
+            //_timer.Tick += (sender, o) => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(CurrentTime)));
+            _timer.Tick += (sender, o) => RaisePropertyChanged(nameof(CurrentTime));
             _timer.Start();
         }
 

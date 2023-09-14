@@ -12,7 +12,7 @@ namespace Microsoft.DataBindingSampleWpf.Resources
     /// general approach for setting the DataContext on an UI
     /// in contradiction to setting it for each single control.
     /// </summary>
-    public class MainWindowDataContext : INotifyPropertyChanged
+    public class MainWindowDataContext : ObservableObject/*INotifyPropertyChanged*/
     {
         public string? UserName { get; set; }
 
@@ -21,7 +21,7 @@ namespace Microsoft.DataBindingSampleWpf.Resources
         /// </summary>
         public Visibility GreetingVisibility => IsNameNeeded ? Visibility.Collapsed : Visibility.Visible;
 
-        public event PropertyChangedEventHandler? PropertyChanged;
+        //public event PropertyChangedEventHandler? PropertyChanged;
 
         private bool _isNameNeeded = true;
 
@@ -40,14 +40,15 @@ namespace Microsoft.DataBindingSampleWpf.Resources
             get { return _isNameNeeded; }
             set
             {
-                if (value != _isNameNeeded)
-                {
-                    _isNameNeeded = value;
-                    PropertyChanged?.Invoke(
-                        this, new PropertyChangedEventArgs(nameof(IsNameNeeded)));
-                    PropertyChanged?.Invoke(
-                        this, new PropertyChangedEventArgs(nameof(GreetingVisibility)));
-                }
+                if(Set(ref _isNameNeeded, value)) RaisePropertyChanged(nameof(GreetingVisibility));
+                //if (value != _isNameNeeded)
+                //{
+                //    _isNameNeeded = value;
+                //    PropertyChanged?.Invoke(
+                //        this, new PropertyChangedEventArgs(nameof(IsNameNeeded)));
+                //    PropertyChanged?.Invoke(
+                //        this, new PropertyChangedEventArgs(nameof(GreetingVisibility)));
+                //}
             }
         }
 
