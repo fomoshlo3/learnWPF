@@ -36,7 +36,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Dependency Properties", "De
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "XAMLDependencyProperty", "XAMLDependencyProperty\XAMLDependencyProperty.csproj", "{D3D11351-34B6-4DFC-952C-369137F57C8C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Microsoft.DataBindingSampleWpf", "Microsoft.DataBindingSampleWpf\Microsoft.DataBindingSampleWpf.csproj", "{947BB58B-790C-47B1-9A7D-20296FF64652}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Microsoft.DataBindingSampleWpf", "Microsoft.DataBindingSampleWpf\Microsoft.DataBindingSampleWpf.csproj", "{947BB58B-790C-47B1-9A7D-20296FF64652}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UIforWin10", "UIforWin10", "{530E4360-8D85-4238-8DC5-508BE26DF4B8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UsingLayoutsApp", "UsingLayoutsApp\UsingLayoutsApp.csproj", "{83D11E5B-C7AA-42ED-B6FD-B94F4E073C93}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -84,6 +88,10 @@ Global
 		{947BB58B-790C-47B1-9A7D-20296FF64652}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{947BB58B-790C-47B1-9A7D-20296FF64652}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{947BB58B-790C-47B1-9A7D-20296FF64652}.Release|Any CPU.Build.0 = Release|Any CPU
+		{83D11E5B-C7AA-42ED-B6FD-B94F4E073C93}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{83D11E5B-C7AA-42ED-B6FD-B94F4E073C93}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{83D11E5B-C7AA-42ED-B6FD-B94F4E073C93}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{83D11E5B-C7AA-42ED-B6FD-B94F4E073C93}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -98,6 +106,7 @@ Global
 		{84A51EA0-BBD4-49D6-8291-598296CB0EF1} = {F152FB6D-C9ED-4D5B-B847-C5F2262A9656}
 		{D3D11351-34B6-4DFC-952C-369137F57C8C} = {E3741F0B-7FF6-4454-9C50-12BF947BF2E3}
 		{947BB58B-790C-47B1-9A7D-20296FF64652} = {53DD0D58-AE06-4E36-B782-83313A7574F3}
+		{83D11E5B-C7AA-42ED-B6FD-B94F4E073C93} = {530E4360-8D85-4238-8DC5-508BE26DF4B8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {814DC4CA-8EA7-4EAE-BB55-36182865B39B}
