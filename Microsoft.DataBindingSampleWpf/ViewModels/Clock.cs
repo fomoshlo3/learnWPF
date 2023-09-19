@@ -3,7 +3,7 @@ using System;
 using System.ComponentModel;
 using System.Windows.Threading;
 
-namespace Microsoft.DataBindingSampleWpf.Models
+namespace Microsoft.DataBindingSampleWpf.ViewModels
 {
     public class Clock : ObservableObject /*INotifyPropertyChanged*/
     {
@@ -11,7 +11,7 @@ namespace Microsoft.DataBindingSampleWpf.Models
         /// Expression-bodied Member
         /// </summary>
         public string CurrentTime => DateTime.Now.ToLongTimeString();
-        
+
         #region DEFAULT
         /* 
          * public string CurrentTime
@@ -38,7 +38,7 @@ namespace Microsoft.DataBindingSampleWpf.Models
         /// </summary>
         public Clock()
         {
-            _timer = new DispatcherTimer 
+            _timer = new DispatcherTimer
             {
                 Interval = TimeSpan.FromSeconds(1)
             };
