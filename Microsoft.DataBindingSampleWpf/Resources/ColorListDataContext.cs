@@ -71,12 +71,20 @@ namespace Microsoft.DataBindingSampleWpf.Resources
         {
             if (SelectedColor == null) return;
             FavoriteColors.Add(SelectedColor);
+            RaisePropertyChanged(nameof(IsNotEmptyList));
         }
 
         public void RemoveSelectedColorFromFavorites()
         {
             if (SelectedColor == null) return;
             FavoriteColors.Remove(SelectedFavoriteColor);
+            RaisePropertyChanged(nameof(IsNotEmptyList));
         }
+
+
+        /// <summary>
+        /// Bool for controlling visibility of the FavoriteColorList
+        /// </summary>
+        public bool IsNotEmptyList => FavoriteColors.Count > 0;
     }
 }

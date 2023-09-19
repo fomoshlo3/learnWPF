@@ -24,8 +24,5 @@ namespace Microsoft.DataBindingSampleWpf.Views
         {
             DC.RemoveSelectedColorFromFavorites();
         }
-        //TODO: As an exercise, try hiding the entire Favorite Colors part of the UI when the FavoriteColors collection is empty.
-        //Hint: use a StackPanel to group the affected controls, and bind the StackPanel's Visibility to a property in the ColorListDataContext class.
-        //Whenever a favorite color is added or removed, notify the UI about the changes to this property.
     }
 }

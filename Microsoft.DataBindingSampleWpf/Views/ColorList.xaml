@@ -26,8 +26,11 @@
     <StackPanel>
         <ComboBox ItemsSource="{Binding LotsOfColors}" Margin="20" Width="200" HorizontalAlignment="Left" VerticalAlignment="Top" ItemTemplate="{StaticResource ColorTemplate}" SelectedItem="{Binding SelectedColor, Mode=TwoWay}"/>
         <Button Margin="20" HorizontalAlignment="Left" Content="Add to Favorites" Click="CmdAddToFavorites_Click"/>
-        <TextBlock FontSize="25" Margin="20, 20, 20, 0" Text="Favorite colors"/>
-        <ListBox SelectedItem="{Binding SelectedFavoriteColor, Mode=TwoWay}" ItemsSource="{Binding FavoriteColors}" ItemTemplate="{StaticResource ColorTemplate}" Margin="20, 20, 20, 0" HorizontalAlignment="Left"/>
-        <Button Margin="20" HorizontalAlignment="Left" Content="Remove from favorites" Click="CmdRemoveFromFavorites_Click" IsEnabled="{Binding IsRemoveFavoriteEnabled}"/>
+        <StackPanel Visibility="{Binding IsNotEmptyList, Converter={StaticResource BooleanToVisibilityConverter}}">
+            <TextBlock FontSize="25" Margin="20, 20, 20, 0" Text="Favorite colors"/>
+            <ListBox SelectedItem="{Binding SelectedFavoriteColor, Mode=TwoWay}" ItemsSource="{Binding FavoriteColors}" ItemTemplate="{StaticResource ColorTemplate}" Margin="20, 20, 20, 0" HorizontalAlignment="Left"/>
+            <Button Margin="20" HorizontalAlignment="Left" Content="Remove from favorites" Click="CmdRemoveFromFavorites_Click" IsEnabled="{Binding IsRemoveFavoriteEnabled}"/>
+
+        </StackPanel>
     </StackPanel>
 </Window>
