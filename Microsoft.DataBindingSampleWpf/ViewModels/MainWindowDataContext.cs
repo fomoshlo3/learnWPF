@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 
-namespace Microsoft.DataBindingSampleWpf.Resources
+namespace Microsoft.DataBindingSampleWpf.ViewModels
 {
     /// <summary>
     /// general approach for setting the DataContext on an UI

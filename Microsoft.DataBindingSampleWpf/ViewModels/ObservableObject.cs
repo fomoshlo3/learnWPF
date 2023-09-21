@@ -3,7 +3,7 @@ using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Collections.ObjectModel;
 
-namespace Microsoft.DataBindingSampleWpf.Resources
+namespace Microsoft.DataBindingSampleWpf.ViewModels
 {
     //TODO: Save as custom template for classes when using WPF
     /// <summary>

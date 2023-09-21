@@ -1,4 +1,4 @@
-﻿using Microsoft.DataBindingSampleWpf.Resources;
+﻿using Microsoft.DataBindingSampleWpf.ViewModels;
 using System.Windows.Media;
 
 namespace Microsoft.DataBindingSampleWpf.Models

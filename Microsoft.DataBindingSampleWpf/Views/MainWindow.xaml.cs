@@ -1,4 +1,5 @@
-﻿using Microsoft.DataBindingSampleWpf.Resources;
+﻿
+using Microsoft.DataBindingSampleWpf.ViewModels;
 using System.Windows;
 
 namespace Microsoft.DataBindingSampleWpf
