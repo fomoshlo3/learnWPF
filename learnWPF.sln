@@ -42,9 +42,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UIforWin10", "UIforWin10", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UsingLayoutsApp", "UsingLayoutsApp\UsingLayoutsApp.csproj", "{83D11E5B-C7AA-42ED-B6FD-B94F4E073C93}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UsingControlsApp", "UsingControlsApp\UsingControlsApp.csproj", "{AC60F744-B00A-45A1-A19F-751F812B3CCD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UsingControlsApp", "UsingControlsApp\UsingControlsApp.csproj", "{AC60F744-B00A-45A1-A19F-751F812B3CCD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UserInputApp", "UserInputApp\UserInputApp.csproj", "{8786AFE4-FC76-41F8-ACA3-76B3D1C65002}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UserInputApp", "UserInputApp\UserInputApp.csproj", "{8786AFE4-FC76-41F8-ACA3-76B3D1C65002}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Navigation", "Navigation", "{416E2C47-F6F2-4BC9-B1BA-01B889FDDA36}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppNavigationbyUWPNavService", "AppNavigationbyUWPNavService\AppNavigationbyUWPNavService.csproj", "{227182B8-D103-4E22-AA45-89D43CF84943}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -104,6 +108,10 @@ Global
 		{8786AFE4-FC76-41F8-ACA3-76B3D1C65002}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8786AFE4-FC76-41F8-ACA3-76B3D1C65002}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8786AFE4-FC76-41F8-ACA3-76B3D1C65002}.Release|Any CPU.Build.0 = Release|Any CPU
+		{227182B8-D103-4E22-AA45-89D43CF84943}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{227182B8-D103-4E22-AA45-89D43CF84943}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{227182B8-D103-4E22-AA45-89D43CF84943}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{227182B8-D103-4E22-AA45-89D43CF84943}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -121,6 +129,7 @@ Global
 		{83D11E5B-C7AA-42ED-B6FD-B94F4E073C93} = {530E4360-8D85-4238-8DC5-508BE26DF4B8}
 		{AC60F744-B00A-45A1-A19F-751F812B3CCD} = {530E4360-8D85-4238-8DC5-508BE26DF4B8}
 		{8786AFE4-FC76-41F8-ACA3-76B3D1C65002} = {530E4360-8D85-4238-8DC5-508BE26DF4B8}
+		{227182B8-D103-4E22-AA45-89D43CF84943} = {416E2C47-F6F2-4BC9-B1BA-01B889FDDA36}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {814DC4CA-8EA7-4EAE-BB55-36182865B39B}
