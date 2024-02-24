@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace LAP.src.Views
+namespace LAP.Views
 {
     /// <summary>
     /// Interaktionslogik für QueryTabView.xaml

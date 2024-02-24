@@ -1,13 +1,8 @@
 ﻿using CommunityToolkit.Mvvm.Input;
-using LAP.src.Resource;
-using LAP.src.ViewModels;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using LAP.Resource;
+using LAP.ViewModels;
 
-namespace LAP.src
+namespace LAP
 {
     public class MainViewModel : ViewModel
     {
@@ -16,10 +11,14 @@ namespace LAP.src
             Navigation = navigation;
 
             NavigateToQueryTabViewCommand = new RelayCommand(() => Navigation.NavigateTo<QueryTabViewModel>());
-        } 
+            NavigateToSettingsViewCommand = new RelayCommand(() => Navigation.NavigateTo<SettingsViewModel>());
+
+            //Note: CurrentViewModel get's set
+            NavigateToQueryTabViewCommand.Execute(null);
+        }
 
         #region Boilerplate
-            #region Navigation
+        #region Navigation
         private INavigationManager _navigation;
 
         public INavigationManager Navigation
@@ -32,8 +31,8 @@ namespace LAP.src
             }
         }
 
-        private IRelayCommand NavigateToQueryTabViewCommand;
-
+        public IRelayCommand NavigateToQueryTabViewCommand { get; }
+        public IRelayCommand NavigateToSettingsViewCommand { get; }
             #endregion
         #endregion
     }

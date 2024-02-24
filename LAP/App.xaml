@@ -2,11 +2,14 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:LAP" 
-             xmlns:views="clr-namespace:LAP.src.Views"
-             xmlns:model="clr-namespace:LAP.src.ViewModels">
+             xmlns:views="clr-namespace:LAP.Views"
+             xmlns:model="clr-namespace:LAP.ViewModels">
     <Application.Resources>
         <DataTemplate DataType="{x:Type model:QueryTabViewModel}">
             <views:QueryTabView/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type model:SettingsViewModel}">
+            <views:SettingsView/>
         </DataTemplate>
     </Application.Resources>
 </Application>

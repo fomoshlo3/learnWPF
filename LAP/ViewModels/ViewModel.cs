@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LAP.src.ViewModels
+namespace LAP.ViewModels
 {
     public abstract class ViewModel : ObservableObject
     {

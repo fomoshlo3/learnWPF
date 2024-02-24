@@ -1,12 +1,12 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
-using LAP.src.ViewModels;
+using LAP.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LAP.src.Resource
+namespace LAP.Resource
 {
     public interface INavigationManager
     {
@@ -21,15 +21,17 @@ namespace LAP.src.Resource
         {
                 _viewModelFactory = viewModelFactory;
         }
+
         private readonly Func<Type, ViewModel> _viewModelFactory;
 
+   
         private ViewModel _currentViewModel;
         public ViewModel CurrentViewModel
         {
             get => _currentViewModel;
             private set
             {
-                _currentViewModel?.Dispose();
+                _currentViewModel.Dispose();
                 _currentViewModel = value;
                 OnPropertyChanged();
             }
